@@ -212,7 +212,7 @@
 		padding: 0 25px;
 		position: relative;
     	z-index: 15;
-    	background-color: darkgrey;
+    	background-color: white;
 		border-radius: 25px;	
 	}
 
@@ -263,6 +263,11 @@
 		display: table;
 		text-decoration: none;
 		line-height: 150%
+		vertical-align: middle;
+	}
+
+	.resume-link:first-child {
+		margin-top: 13px;
 	}
 
 	/* Padding creates the black bar background; 
@@ -273,7 +278,7 @@
 		font-size: x-large;
 		background-color: black;
 		color: white;
-		padding: 8px 0 8px 5px;
+		padding: 5px 0 5px 5px;
 		margin: -8px 0 0 -5px;
 	}
 
@@ -297,23 +302,23 @@
 		font-style: italic;
 		font-size: medium;
 		color: gray;
-		margin: 0 0 20px;
-		line-height: 130%
+		margin: -20px 0 20px;
+	}
+
+	/* Closes the gap between .job-dates and .job-details */	
+	h3 + ul {
+		margin-top: -18px;
 	}
 
 	/* Margin creates a minimal amount of space BETWEEN list items */	
 	.job-details {
-		margin: 0
+		margin: -2px
 	}
 	
-	/* Margin creates space BEFORE FIRST list item */	
-	li:first-child {
-		margin-top: 5px
-	}
 
 	/* Margin removes the space AFTER LAST list item */	
 	li:last-child {
-		margin-bottom: -14px
+		margin-bottom: -10px
 	}
 
 /* #Font-Face
