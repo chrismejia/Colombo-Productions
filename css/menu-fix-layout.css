@@ -17,6 +17,8 @@
 	8		.resume-pic
 	11		.links a
 	15		#resume
+	19		.menu-background
+	20		.menu-link
 	99999	.white-bar
 			.blank-bar
 */	
@@ -139,13 +141,13 @@
 
 	#portfolio {
 		margin-top: 15px;
-		padding: 25px 25px;
+		padding: 25px 0px;
 		position: relative;
 		z-index: 15;
 	}
 
 	.menu-section {
-
+		margin-bottom: 25px
 	}
 
 	.menu-header {
@@ -156,35 +158,40 @@
 	}
 
 	.menu-project {
-		padding: 0 5px;
 		height: 50px;
-		margin-bottom: 5px;	
+		margin-bottom: 5px;
+		overflow: hidden;
+		text-align: center;
+		vertical-align: middle;
    	}
 
    	.menu-project:hover {
-   		transition: all .5s ease;
-   		background-color: yellow
+   		transition: all .75s ease;
+   		background-color: white
    	}
 
    	.menu-project:active {
-   		background-color: yellow
+ 
    	}
 
-   	.menu-thumb {
-		float: left;
-		padding-right: 7px;
-
+	.menu-background {
+		position: relative;
+		top: -25px;
+		z-index: 19;
+		opacity: .15;
 	}
 
 	.menu-link {
-		padding-top: 50px;
+		position: relative;
+		z-index: 20;
+		top: 12.5px;
 		font-family: 'Playfair Display', serif;
-		font-weight: 400;
-		font-size: small;
-		font-style: italic;
+		font-weight: 700;
+		font-size: medium;
 		text-decoration: none
 	}
 	
+
 
 	/* Main Project Area*/
 	.project-container {
@@ -195,8 +202,9 @@
 	.project-title {
 		font-family: 'Playfair Display', serif;
 		font-weight: 900;
-		font-size: xx-large;
+		font-style: italic;
 		text-align: center;
+		padding-bottom: 10px;
 		margin-bottom: 5px;
 	}
 
@@ -278,7 +286,7 @@
 		font-size: medium;
 		display: table;
 		text-decoration: none;
-		line-height: 150%
+		line-height: 150%;
 		vertical-align: middle;
 	}
 
