@@ -17,6 +17,8 @@
 	8		.resume-pic
 	11		.links a
 	15		#resume
+	19		.menu-background
+	20		.menu-link
 	99999	.white-bar
 			.blank-bar
 */	
@@ -24,6 +26,17 @@
 	
 /*  #Site Styles
 ================================================== */
+	
+	#pattern-bar {
+		position: relative;
+		z-index: 0;
+		left: 0;
+		top: 50px;
+		margin-bottom: -80px;
+		height: 75px;
+		background-image: url(../images/cream_pixels.png);
+		background-repeat: repeat-x;
+	}
 
 	/* .blank-bar AKA The transparent container for links
 	   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -35,12 +48,10 @@
 		margin: 0px;
 		height: 50px;
 		z-index: 99999;
-		background-color: rgba(255,255,255,0.25);
 	}
 
 	.blank-bar > nav {
-		padding: 15px 30px ;
-		width: 80%;
+		padding: 15px 0;
 		max-width: 1200px;
 		margin: 0 auto;
 	}
@@ -53,14 +64,18 @@
 	.links a {
 		font-family: 'Playfair Display', Georgia, serif;
 		font-weight: 700;
-	    font-size: 1.7rem;
+		font-size: 1.7rem;
 		display: inline-block;
 		padding: 0 15px;
 		top: -50px;
-	    color: black;
+		color: black;
 		text-decoration: none;
-	    border-bottom: 4px solid transparent;
-	    text-shadow: 1.5px 1px 0px rgba(255,255,255,0.75)
+		border-bottom: 4px solid transparent;
+		text-shadow: 1.5px 1px 0px rgba(255,255,255,0.75)
+	}
+
+	.links a:first-child {
+		margin-left: -15px
 	}
 
 	.links a:hover {
@@ -73,18 +88,12 @@
 
 	.white-bar {
 		position: relative;
-		width: 100%;
-		margin-top: 0px;
-		height: 15%;
-		background-color: white;
-		background-image: url(../images/cream_pixels.png);
-		z-index: 99999;
+		margin-top: -10px;
 	}
 
 	.white-bar > header {
 		padding: 15px 0;
-		width: 80%;
-		max-width: 1180px; 	/* 1200 - 10x2(outside gutters)	*/
+		max-width: 1200px;
 		margin: 0 auto;
 	}
 
@@ -125,63 +134,84 @@
 	}	
 	
 
-	/* The Portfolio Page
+	/* My Portfolio Page
 	   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-	
-	.color {
-		background-image: url(../images/wood_pattern.png);
-		background-repeat: repeat;
-		height: 100px;
-		font-size: 4.8rem
-	} 
 
-	.spacer {
+	/* Side Project Menu */
+
+	#portfolio {
+		margin-top: 15px;
+		padding: 25px 0px;
 		position: relative;
-		padding-bottom: 25px;
+		z-index: 15;
 	}
 
-	.gallery-thumbs {
-	    display: block;
-	    margin-left: auto;
-	    margin-right: auto;
-	    margin-bottom: 10px;
-	    width: 75px;
-	    height: 75px;
-
-		transition: all .5s ease;
-		transition-property: width, height, opacity;
+	.menu-section {
+		margin-bottom: 25px
 	}
-		
-	.gallery-thumbs:hover {
-		width: 100px;
-	    height: 100px;
-		opacity: 0.5;
+
+	.menu-header {
+		font-family: 'Playfair Display', serif;
+		font-weight: 700;
+		font-style: italic;
+		margin-bottom: 10px
+	}
+
+	.menu-project {
+		height: 50px;
+		margin-bottom: 5px;
+		overflow: hidden;
+		text-align: center;
+		vertical-align: middle;
+   	}
+
+   	.menu-project:hover {
+   		transition: all .75s ease;
+   		background-color: white
+   	}
+
+   	.menu-project:active {
+ 
+   	}
+
+	.menu-background {
+		position: relative;
+		top: -25px;
+		z-index: 19;
+		opacity: .15;
+	}
+
+	.menu-link {
+		position: relative;
+		z-index: 20;
+		top: 12.5px;
+		font-family: 'Playfair Display', serif;
+		font-weight: 700;
+		font-size: medium;
+		text-decoration: none
 	}
 	
-	/* Background picture for the page */
-	.gallery-text-trick  {
-		font-size: 10px;
-		transition: all .5s ease;
-		transition-property: font-size, translateY;
 
-	}
-	.gallery-text-trick:hover {
-		font-size: 20px;
-		transform:translateY(-15px);
+
+	/* Main Project Area*/
+	.project-container {
+		border-bottom: 5px dotted red;
+		margin-bottom: 10px;
 	}
 
-	/* Project Titles */
-	.project-title-left {
+	.project-title {
 		font-family: 'Playfair Display', serif;
 		font-weight: 900;
-		font-size: xx-large;
+		font-style: italic;
+		text-align: center;
+		padding-bottom: 10px;
+		margin-bottom: 5px;
 	}
 
-	.project-title-right {
-		float: right;
-		font-family: 'Playfair Display', serif;
-		font-weight: 900;
-		font-size: xx-large;
+	.project-details {
+		font-family: 'Lato', sans-serif;
+		font-weight: 400;
+		font-size: small;
 	}
 	
 
@@ -194,7 +224,7 @@
 		left: 0;
 		height: 1200px;
 		position: fixed;
-    	z-index: 8;
+		z-index: 8;
 		overflow: auto;
 		opacity: 0.5;
 	}
@@ -202,10 +232,11 @@
 	/* Details specific to the #resume container.
 	   margin-top mimics a <div="row"> */
 	#resume {
+		margin-top: 20px;
 		padding: 0 25px;
 		position: relative;
-    	z-index: 15;
-    	background-color: darkgrey;
+		z-index: 15;
+		background-color: white;
 		border-radius: 25px;	
 	}
 
@@ -226,7 +257,7 @@
 
 	#pdf-resume > a {
 		text-decoration: none;
-	    border-bottom: .2rem solid gray;
+		border-bottom: .2rem solid gray;
 	}
 
 	#pdf-resume > a:hover {
@@ -255,18 +286,23 @@
 		font-size: medium;
 		display: table;
 		text-decoration: none;
-		line-height: 150%
+		line-height: 150%;
+		vertical-align: middle;
+	}
+
+	.resume-link:first-child {
+		margin-top: 13px;
 	}
 
 	/* Padding creates the black bar background; 
 	   margin removes some of the space created by padding */
 	.resume-section {
-	   	font-family: 'Playfair Display', serif;
-	   	font-weight: 700;
+		font-family: 'Playfair Display', serif;
+		font-weight: 700;
 		font-size: x-large;
 		background-color: black;
 		color: white;
-		padding: 8px 0 8px 5px;
+		padding: 5px 0 5px 5px;
 		margin: -8px 0 0 -5px;
 	}
 
@@ -290,31 +326,32 @@
 		font-style: italic;
 		font-size: medium;
 		color: gray;
-		margin: 0 0 20px;
-		line-height: 130%
+		margin: -20px 0 20px;
+	}
+
+	/* Closes the gap between .job-dates and .job-details */	
+	h3 + ul {
+		margin-top: -18px;
 	}
 
 	/* Margin creates a minimal amount of space BETWEEN list items */	
 	.job-details {
-		margin: 0
+		margin: -2px
 	}
 	
-	/* Margin creates space BEFORE FIRST list item */	
-	li:first-child {
-		margin-top: 5px
-	}
 
 	/* Margin removes the space AFTER LAST list item */	
 	li:last-child {
-		margin-bottom: -14px
+		margin-bottom: -10px
 	}
+
 
 /* #Font-Face
 ================================================== */
 
-	/* These are the fonts used on the site.
-	   Headline fonts are Playfair Display; body fonts are Lato.
-	   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+	/*  These are the fonts used on the site.
+	    Headline fonts are Playfair Display; body fonts are Lato.
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 		@import url(http://fonts.googleapis.com/css?family=Playfair+Display:400italic,700,900italic,900);
 		@import url(http://fonts.googleapis.com/css?family=Lato:400,400italic,700,900);
 
@@ -322,3 +359,57 @@
 		@import url(http://fonts.googleapis.com/css?family=Roboto:100,300,300italic,400,500,700,900,);
 		@import url(http://fonts.googleapis.com/css?family=Playfair+Display+SC:700italic);
 	*/
+
+
+/* #Unused Working Snippets
+==================================================
+
+	.color {
+		background-image: url(../images/wood_pattern.png);
+		background-repeat: repeat;
+		height: 250px;
+		font-size: 4.8rem
+	} 
+
+	.spacer {
+		position: relative;
+		padding-bottom: 25px;
+	}
+
+	.gallery-thumbs {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 10px;
+		width: 75px;
+		height: 75px;
+
+		transition: all .5s ease;
+		transition-property: width, height, opacity;
+	}
+		
+	.gallery-thumbs:hover {
+		width: 100px;
+		height: 100px;
+		opacity: 0.5;
+	}
+	
+	/* Background picture for the page *
+	.gallery-text-trick  {
+		font-size: 10px;
+		transition: all .5s ease;
+		transition-property: font-size, translateY;
+
+	}
+	.gallery-text-trick:hover {
+		font-size: 20px;
+		transform:translateY(-15px);
+	}
+
+	.project-title-right {
+		float: right;
+		font-family: 'Playfair Display', serif;
+		font-weight: 900;
+		font-size: xx-large;
+	}
+*/
