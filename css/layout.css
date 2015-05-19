@@ -278,6 +278,10 @@
 		color: black
 	}
 
+	#double-degree {
+		margin-bottom: -20px
+	}
+
 	.resume-link {
 		font-family: 'Lato', sans-serif;
 		font-weight: 400;
