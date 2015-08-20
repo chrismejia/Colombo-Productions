@@ -88,6 +88,7 @@
 
 	.white-bar {
 		position: relative;
+		z-index: 1000;
 		margin-top: -10px;
 	}
 
@@ -255,7 +256,7 @@
 
 	#pdf-resume > a {
 		text-decoration: none;
-		border-bottom: .2rem solid gray;
+		border-bottom: .1rem solid gray;
 	}
 
 	#pdf-resume > a:hover {
@@ -282,14 +283,20 @@
 		margin-bottom: -20px
 	}
 
+	#binghamton {
+		margin-top: -20px
+	}
+
 	.resume-link {
-		font-family: 'Lato', sans-serif;
+		font-family: 'Playfair Display', serif;
 		font-weight: 400;
 		font-size: medium;
 		display: table;
 		text-decoration: none;
+		border-bottom: .1rem solid gray;
 		line-height: 150%;
 		vertical-align: middle;
+		color: black
 	}
 
 	.resume-link:first-child {
